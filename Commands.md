@@ -1,79 +1,112 @@
-The Complete DJ Suite Command Matrix
-Here is how the permissions are split among viewers, administrators, and the bot owner:
+DJ Suite & Moderation Commands Reference
 
-1. Viewer Commands (Open to Everyone)
-These commands allow the audience to interact with the media player directly, as long as they are not on the banned list.
-!play <link / video ID>
-Queues a track from YouTube, YouTube Shorts, TikTok, Twitter/X, or Instagram.
-Example: !play https://www.youtube.com/watch?v=dQw4w9WgXcQ or !play dQw4w9WgXcQ
+This guide details the commands divided cleanly by engine (DJ, Mod, Bot) and explains the immunity and safeguard rules.
 
-!skip or !next
-Immediately cuts the currently playing media asset and advances to the next item waiting in the queue pipeline.
-!loop
-Toggles repeating the current track indefinitely. Typing it again turns looping off.
-!rickroll
-Injects a priority Rickroll track straight to position zero of the queue, cuts the active video, and safely pushes all other viewer requests back by one slot.
-!lofi
-Clears the active playback to instantly inject a 10-minute Lofi study mix, reserving the existing queue to resume right afterward.
-!aemeath
-Injects a curated personal theme track preset that forces the playback engine to jump straight to the custom timestamp 1:55 dynamically.
-!party
-Triggers a 5-second party strobe effect that flashes the host machine's system volume rapidly between 40% and 100%.
-Meme Overrides
-Typing any of these shortcuts skips the active track to instantly blast a short, loud soundbite before returning to the normal queue:
+PART 1: DJ ENGINE COMMANDS (Media & Audio)
+
+These commands control the background media playback (via Chrome or Headless MPV).
+
+Viewer DJ Commands (Open to Everyone)
+
+!play <link / video ID> - Queues a track from YouTube, TikTok, Twitter/X, or Instagram.
+
+!skip or !next - Skips the currently playing song or video.
+
+!loop - Toggles repeating the current track indefinitely.
+
+!rickroll - Injects Rickroll at position zero, skips the active track, and pushes the rest of the queue back.
+
+!lofi - Clears active playback to play a 10-minute Lofi study mix.
+
+!aemeath - Plays the designated personal theme track starting at timestamp 1:55.
+
+!party - Flashes system volume between 40% and 100% for 5 seconds.
+
+Meme Overrides: Type any of these triggers to play a quick soundbite and return to the normal queue:
 !johncena, !rko, !a10, !mayo, !minecraft, !wesker, !invincible, !dexter, !windows, !ps2
 
-2. Admin & Moderator Commands
-These commands bypass restrictions (such as when Chaos mode is turned off) and allow trusted moderators to control the environment.
-!ban <@username>
-Blacklists a specific chatter. The bot will completely ignore any future !play requests from them.
-!unban <@username>
-Removes a chatter from the blacklist, restoring their ability to request music.
+Admin DJ Commands
 
-!enough
-The Chaos Toggle.
-Turning this OFF completely freezes all viewer commands (!party, !slow, !fast, memes, etc.), allowing only standard !play requests to go through.
-Only Admins can bypass this freeze.
+!enough - The Chaos Toggle. Turning this OFF completely freezes all viewer-only commands (memes, speed changes, !party), allowing only standard !play requests.
 
-!volume <0-100>
-Directly changes the host machine’s core system master volume.
-Example: !volume 50 sets the computer to 50% volume.
+!volume <0-100> - Directly changes the host machine's master system volume.
 
-!reset or !normalspeed
-Instantly clears any active playback audio filters, resets playback speeds back to a flat 1.0x, and brings audio levels back to default baselines safely.
+!reset or !normalspeed - Clears any active audio filters and resets playback speed to a flat 1.0x.
 
-3. Owner-Only Commands (The Bot Host)
-These commands can only be issued by the person explicitly running the script to manage who has moderator access to the bot.
-!addadmin <@username>
-Appends a trusted live viewer to the bot's dynamic runtime memory list, giving them full access to all Admin/Moderator commands.
-!removeadmin <@username>
-Revokes administrative control from a user, dropping them back down to standard viewer permissions.
-!admins
-Prints a clean layout of all currently designated channel administrators directly into your local terminal console window for easy monitoring.
+PART 2: MODERATION ENGINE COMMANDS (mod.py)
 
-## Advanced Moderation & AI Chatbot Architecture
+These commands control live chat safety and execute actions directly through the reverse-engineered Webcast API.
 
-[cite_start]The moderation suite operates using a highly efficient **Twin-Bot Architecture**[cite: 45]. [cite_start]Instead of cramming all chat, API, and logic features into one massive, slow script, the system splits responsibilities between two distinct Python files: the Chat Bot (`bot.py`) and the Moderation Engine (`mod.py`)[cite: 46]. [cite_start]These two scripts run simultaneously and communicate seamlessly by reading and writing to shared JSON configuration files, ensuring role permissions and settings are synchronized in real-time[cite: 47].
+Admin Moderation Commands
 
----
+!ban <@username> - Blacklists a specific user from using the DJ system (!play).
 
-## Core Features & Interaction Pipeline
+!unban <@username> - Removes a user from the DJ blacklist.
 
-## 1. Automated Spam Detection & Interactive Warnings
-[cite_start]The bot continuously scans incoming WebSocket chat packets for repetitive text, restricted words, or malicious link spam[cite: 48]. [cite_start]When a violation is detected, the AI bot actively posts a warning message directly into the live TikTok chat to deter the user before escalating to a mute or ban[cite: 49].
+!mute <@username> [duration] - Mutes a user in live chat via raw HTTP POST payload (e.g., !mute @user 5m).
 
-## 2. AI-Powered !nuke Command
-[cite_start]For severe chat raids, authorized administrators can trigger the `!nuke` command[cite: 50]. [cite_start]The AI instantly analyzes the surrounding chat context to identify malicious actors participating in the raid and executes a mass-muting payload through the moderation engine, instantly cleaning the stream[cite: 51].
+!unmute <@username> - Unmutes a user in live chat.
 
-## 3. Dynamic Immunity Lists
-[cite_start]To prevent automated moderation from accidentally silencing the wrong people, the JSON permission structure enforces a strict immunity list[cite: 52]. [cite_start]VIPs, the broadcaster, and registered administrators are shielded from automated spam detection filters and mass-nuke commands[cite: 53].
+!warn <@username> [reason] - Sends a warning to a user in live chat. Repeated warnings trigger automated muting actions.
 
-## 4. Shared JSON State Management
-[cite_start]Both the AI chat listener and the active moderation script share a localized JSON database[cite: 54]. [cite_start]If an admin uses `!addadmin` in the chat, `bot.py` updates the JSON file[cite: 55]. [cite_start]A millisecond later, `mod.py` reads that updated file and instantly grants the new admin the authority to execute mute and ban payloads[cite: 56].
+!nuke - Triggers an AI sweep of the recent chat logs to identify raid accounts and mass-mutes them instantly.
 
----
+PART 3: AI CHATBOT COMMANDS (bot.py)
 
-## How the Bots Interact Under the Hood
+These commands control the conversational AI responses and automated monitoring.
 
-1. [cite_start]**The Listener (`bot.py`):** Operates securely on a read-only WebSocket connection via the standard `TikTokLive` library[cite: 57]. [cite_start]It passes incoming messages to the AI provider (like OpenAI or DeepSeek) to generate conversational responses or analyze chat context[cite: 58].
-2. [cite_start]**The Enforcer (`mod.py`):** Operates entirely via raw HTTP POST requests[cite: 59]. [cite_start]When the AI or an admin decides a user needs to be muted, `bot.py` signals the moderation engine[cite: 60]. [cite_start]`mod.py` then crafts the required network payload (stitching together the `room_id`, target user ID, and active session cookies) and fires it directly into TikTok's Webcast API[cite: 61].
+Viewer Chat Commands
+
+!ask <prompt> or !ai <prompt> - Queries the AI provider (DeepSeek/Gemini) to generate a conversational response.
+
+Admin Chat Commands
+
+!say <message> - Forces the AI bot to send a specific announcement message into live chat.
+
+!sleep - Temporarily pauses the AI chatbot responses and halts automated spam checks.
+
+!wakeup - Resumes AI chatbot responses and automated spam checking.
+
+PART 4: OWNER-ONLY COMMANDS (System Host)
+
+These commands can only be typed by the primary bot host to manage administrators.
+
+!addadmin <@username> - Dynamically grants a viewer full Admin/Moderator privileges.
+
+!removeadmin <@username> - Revokes Admin/Moderator privileges from a user.
+
+!admins - Outputs the list of active administrators directly into the local terminal window.
+
+PART 5: SYSTEM SAFEGUARDS & IMMUNITY RULES
+
+1. How the !nuke Command Works
+
+When an admin type !nuke, the following sequence triggers:
+
+bot.py reads the last 50-100 chat messages from memory.
+
+The chat log is analyzed by the AI to look for patterns (e.g., identical spam strings, rapid-fire bot accounts, or coordinated raids).
+
+The AI returns a list of target usernames.
+
+mod.py immediately fires parallel HTTP POST payloads to TikTok's API, mass-muting all raiders within milliseconds.
+
+2. The Immunity Hierarchy
+
+To prevent the AI or other admins from accidentally muting, warning, or banning vital stream members, a strict immunity protocol is hardcoded into config.json:
+
+Tier 1: Broadcaster / Streamer
+
+Absolute 100% immunity. Cannot be warned, muted, banned, or nuked under any circumstances.
+
+Tier 2: Bot Owner (Host Account)
+
+Full immunity. Cannot be demoted or moderated by other admins.
+
+Tier 3: Admins / Moderators
+
+Exempt from all automated spam-detection filters and !nuke sweeps.
+
+Tier 4: VIPs / Whitelisted Users
+
+Shielded from automated spam-detection filters (e.g., repeating characters or excessive symbols) to prevent false-positives, but can still be manually moderated by an admin if needed.
