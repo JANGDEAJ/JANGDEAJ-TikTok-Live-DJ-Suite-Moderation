@@ -4,10 +4,10 @@ Developed a high-performance, event-driven automation suite using Python asyncio
 
 ---
 
-## Core Engineering Implementations
+## Core Implementations
 
 ### Headless Architecture (mpv Backend)
-Engineered a high-efficiency configuration that decouples web runtimes from asset extraction. Utilizes `yt-dlp` to extract raw audio payloads directly from edge servers, feeding streams into a detached, non-rendering `mpv` sub-process.
+a high-efficiency configuration that decouples web runtimes from asset extraction. Utilizes `yt-dlp` to extract raw audio payloads directly from edge servers, feeding streams into a detached, non-rendering `mpv` sub-process.
 
 ### 0% Desktop Input Interference
 Eliminated active application window generation entirely using `CREATE_NO_WINDOW` flags on Windows and detached terminal workers on Unix systems. This completely prevents background stream processes from intercepting keyboard or mouse focus, allowing users to run frame-critical gaming inputs or development tools smoothly.
@@ -28,7 +28,7 @@ Built entirely on top of an asynchronous loop architecture to handle volatile in
 Maintained automated memory caching for instant asset length processing while enforcing robust state lists for role-based system permissions, cleanly segmenting Owner, Admin, and Restricted/Banned user layers.
 
 ## Headless Architecture (mpv Backend)
-Engineered a high-efficiency configuration that decouples web runtimes from asset extraction. Utilizes `yt-dlp` to extract raw audio payloads directly from edge servers, feeding streams into a detached, non-rendering `mpv` sub-process.
+a high-efficiency configuration that decouples web runtimes from asset extraction. Utilizes `yt-dlp` to extract raw audio payloads directly from edge servers, feeding streams into a detached, non-rendering `mpv` sub-process.
 
 ## 0% Desktop Input Interference
 Eliminated active application window generation entirely using `CREATE_NO_WINDOW` flags on Windows and detached terminal workers on Unix systems. This completely prevents background stream processes from intercepting keyboard or mouse focus, allowing users to run frame-critical gaming inputs or development tools smoothly.
