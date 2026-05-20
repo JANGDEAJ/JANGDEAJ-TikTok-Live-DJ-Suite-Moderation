@@ -286,3 +286,10 @@ If you want to expand the bot to perform custom actions, you must map exactly ho
 4. Watch the Network tab for a new request targeting an endpoint like `/webcast/room/mute/` or `/webcast/room/ban/`.
 5. Click that request row and view the `Payload` tab. Here you will find the exact structural parameters required by the server, including the active `room_id` and the `target_user_id`. Your code must replicate this exact dictionary structure to successfully fire a payload.
 
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+"If your device is slow, the browser may take some time to open. The way this works is: when someone queues a song, the program estimates the exact duration and automatically skips it when the time runs out — so if your device is slow and the browser opens late, your song may get cut off before it actually finishes
+
+Last thing if you want more functions you can ask me , already done like 10 more functions with troll prove admin only thing etc, or if you don't want to chat with me , ask ai to mod it 
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
