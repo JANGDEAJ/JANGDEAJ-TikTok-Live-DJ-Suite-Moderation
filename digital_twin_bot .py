@@ -44,14 +44,14 @@ def _load_env(path=".env"):
 _load_env()
 
 # ─── CONFIGURATION ────────────────────────────────────────────────────────────
-TIKTOK_USERNAME  = "@pcychpt"          
-OWNER_USERNAME   = "30435351025"       
-OWNER_NICKNAME   = "ez myfriends"      
-OWNER_USER_ID    = "30435351025"       
+TIKTOK_USERNAME  = "@"          
+OWNER_USERNAME   = ""       
+OWNER_NICKNAME   = ""      
+OWNER_USER_ID    = ""       
 
 # คุกกี้สิทธิ์แอดมินเจ้าของช่องจากหน้าเว็บระบบหลัก
-SESSION_ID = "504c6501f3e728e51127fd1122f0e683"
-MS_TOKEN   = "Zb0E5RoCxuDLDavtf69UU9adadGK6CR4wUSM6U0mXfmhd8cgqNs9LIcM8_ECwedTTiHnDWjqxCHrC76qJIgt8GHtpocRppUA-KZzOluw5AOwAJZbp4lbkkP1vD0biJrIHUhy5IySs2-Q0QUL7jbDfU8dBQ=="
+SESSION_ID = ""
+MS_TOKEN   = ""
 
 DEEPSEEK_API_KEY = os.environ.get("DEEPSEEK_API_KEY")
 DEEPSEEK_MODEL   = "deepseek-chat"  
