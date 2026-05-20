@@ -104,67 +104,7 @@ Go to a TikTok ID lookup tool online, or view your profile link on a desktop bro
 The Complete DJ Suite Command Matrix
 Here is how the permissions are split among viewers, administrators, and the bot owner:
 
-1. Viewer Commands (Open to Everyone)
-These commands allow the audience to interact with the media player directly, as long as they are not on the banned list.
 
-!play <link / video ID>
-Queues a track from YouTube, YouTube Shorts, TikTok, Twitter/X, or Instagram.
-
-Example: !play https://www.youtube.com/watch?v=dQw4w9WgXcQ or !play dQw4w9WgXcQ
-
-!skip or !next
-Immediately cuts the currently playing media asset and advances to the next item waiting in the queue pipeline.
-
-!loop
-Toggles repeating the current track indefinitely. Typing it again turns looping off.
-
-!rickroll
-Injects a priority Rickroll track straight to position zero of the queue, cuts the active video, and safely pushes all other viewer requests back by one slot.
-
-!lofi
-Clears the active playback to instantly inject a 10-minute Lofi study mix, reserving the existing queue to resume right afterward.
-
-!aemeath
-Injects a curated personal theme track preset that forces the playback engine to jump straight to the custom timestamp 1:55 dynamically.
-
-!party
-Triggers a 5-second party strobe effect that flashes the host machine's system volume rapidly between 40% and 100%.
-
-Meme Overrides
-Typing any of these shortcuts skips the active track to instantly blast a short, loud soundbite before returning to the normal queue:
-!johncena, !rko, !a10, !mayo, !minecraft, !wesker, !invincible, !dexter, !windows, !ps2
-
-2. Admin & Moderator Commands
-These commands bypass restrictions (such as when Chaos mode is turned off) and allow trusted moderators to control the environment.
-
-!ban <@username>
-Blacklists a specific chatter. The bot will completely ignore any future !play requests from them.
-
-!unban <@username>
-Removes a chatter from the blacklist, restoring their ability to request music.
-
-!enough
-The Chaos Toggle. Turning this OFF completely freezes all viewer commands (!party, !slow, !fast, memes, etc.), allowing only standard !play requests to go through. Only Admins can bypass this freeze.
-
-!volume <0-100>
-Directly changes the host machine’s core system master volume.
-
-Example: !volume 50 sets the computer to 50% volume.
-
-!reset or !normalspeed
-Instantly clears any active playback audio filters, resets playback speeds back to a flat 1.0x, and brings audio levels back to default baselines safely.
-
-3. Owner-Only Commands (The Bot Host)
-These commands can only be issued by the person explicitly running the script to manage who has moderator access to the bot.
-
-!addadmin <@username>
-Appends a trusted live viewer to the bot's dynamic runtime memory list, giving them full access to all Admin/Moderator commands.
-
-!removeadmin <@username>
-Revokes administrative control from a user, dropping them back down to standard viewer permissions.
-
-!admins
-Prints a clean layout of all currently designated channel administrators directly into your local terminal console window for easy monitoring.
 
 ## Advanced Moderation & AI Chatbot Architecture
 
