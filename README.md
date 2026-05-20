@@ -69,15 +69,13 @@ cmd = ["C:\\CustomFolder\\mpv.exe", url, "--no-video"]
 4. Run the Engine
 Install the standard base packages and execute your chosen script file:
 
-Bash
-# Install base requirements
+Bash# Install base requirements
 pip install TikTokLive yt-dlp
 
 # Windows-only audio requirements (For Chrome/MPV Windows)
 pip install pycaw comtypes
 Launch the code via your terminal instance:
 
-Bash
 python dj_windows_linux.py      # For Windows/Linux Environments
 python3 dj_queue_mac.py         # For macOS Environments
 How to Configure the Bot for Moderation
