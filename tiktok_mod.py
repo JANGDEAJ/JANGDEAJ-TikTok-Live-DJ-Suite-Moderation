@@ -26,8 +26,8 @@ OWNER_NICKNAME  = "Ez Myfriends"   # Your TikTok display name
 OWNER_USER_ID   = "30435351025"    # Your numeric TikTok user ID
 
 # Paste from Brave DevTools → F12 → Application → Cookies → tiktok.com
-SESSION_ID = "504c6501f3e728e51127fd1122f0e683"
-MS_TOKEN   = "Zb0E5RoCxuDLDavtf69UU9adadGK6CR4wUSM6U0mXfmhd8cgqNs9LIcM8_ECwedTTiHnDWjqxCHrC76qJIgt8GHtpocRppUA-KZzOluw5AOwAJZbp4lbkkP1vD0biJrIHUhy5IySs2-Q0QUL7jbDfU8dBQ=="
+SESSION_ID = ""
+MS_TOKEN   = ""
 
 # ── Persistence ────────────────────────────────────────────────────────────
 MOD_FILE = os.path.join(os.path.dirname(__file__), "mod_list.json")
