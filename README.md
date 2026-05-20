@@ -36,7 +36,7 @@ Follow these steps to deploy the script. This suite includes both a Browser Edit
 
 ## 1. Choose Your Edition & Prerequisites
 
-## Browser Edition (Google Chrome)
+## Browser Edition (Google Chrome,Brave etc.)
 Ensure Google Chrome is installed.
 * **Performance Optimization Tip:** For users running older devices who cannot install heavier alternative browsers like Brave, you can simply use standard Google Chrome equipped with an ad-blocker extension. This replicates the ad-blocking protocol advantages natively.
 
