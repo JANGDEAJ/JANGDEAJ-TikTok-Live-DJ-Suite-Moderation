@@ -33,8 +33,9 @@ Maintained automated memory caching for instant asset length processing while en
 ├── 📄 identity.md       ◀── [REQUIRED] How your AI bot behaves & speaks
 ├── 📄 config.json       ◀── [REQUIRED] Shared database for permissions
 │
-├── 🐍 digital_twin_bot.py
-└── 🐍 tiktok_mod.py
+├── 🐍 digital_twin_bot.py  ◀── [AI Brain] Listens to live chat & auto-types responses
+├── 🐍 tiktok_mod.py        ◀── [Mod Enforcer] Executes mutes/bans via Webcast API
+└── 🐍 dj.py   ◀── [DJ Engine] Low-latency headless media player loops
 
 ---
 ## How to Install & Configure the DJ Engine
