@@ -54,7 +54,7 @@ If your system uses a non-standard installation path for Google Chrome or `mpv`,
 
 ## Modifying the Chrome Binary Path (Mac/Windows)
 Locate the environment variables at the top of your script and update the string value to match your custom folder path:
-```python
+
 
 # Example: Adjusting a custom Google Chrome location on macOS
 CHROME_PATH = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
@@ -203,7 +203,7 @@ To deploy the twin-bot moderation system, follow these execution steps:
 
 ## 1. Install Required Dependencies
 Ensure you have the base TikTok library and your chosen AI provider's SDK installed:
-```bash
+
 pip install TikTokLive openai google-generativeai anthropic browser-cookie3 requests
 
 2. Configure Your Core Files
@@ -238,7 +238,7 @@ The `.env` file stores your private API keys and moderation session tokens secur
 1. Create a new text file in your project root and name it exactly `.env`.
 2. Add your required API keys and session tokens in the following format:
 
-```env
+
 # AI Provider Keys
 DEEPSEEK_API_KEY="sk-your-deepseek-key-here"
 GEMINI_API_KEY="your-gemini-key-here"
