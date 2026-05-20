@@ -27,6 +27,15 @@ Built entirely on top of an asynchronous loop architecture to handle volatile in
 ## Role-Based State Management
 Maintained automated memory caching for instant asset length processing while enforcing robust state lists for role-based system permissions, cleanly segmenting Owner, Admin, and Restricted/Banned user layers.
 
+📁 Your Project Folder/
+│
+├── 📄 .env              ◀── [REQUIRED] Your private API keys & tokens
+├── 📄 identity.md       ◀── [REQUIRED] How your AI bot behaves & speaks
+├── 📄 config.json       ◀── [REQUIRED] Shared database for permissions
+│
+├── 🐍 digital_twin_bot.py
+└── 🐍 tiktok_mod.py
+
 ---
 ## How to Install & Configure the DJ Engine
 
